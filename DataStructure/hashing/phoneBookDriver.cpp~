@@ -1,0 +1,63 @@
+#include<iostream>
+#include<string.h>
+#include"phoneBook.h"
+using namespace std;
+#include"phoneBook.cpp"
+
+int main(){
+
+    int choice, i; 
+    string name;
+    
+    struct Node **hashT=new struct Node*[26], *temp;
+    for(i=0;i<26;i++)
+        hashT[i]=NULL; 
+    while(i){
+        cout<<"Press key:"<<endl;
+        cout<<"1. Add Contact"<<endl;
+        cout<<"2. Show List "<<endl;
+        cout<<"3. Update Contact "<<endl;
+        cout<<"4. Search "<<endl;
+        cout<<"5. Delete Contact "<<endl;
+        cout<<"6. Exit"<<endl;
+        cin>>choice;
+        switch(choice){
+            case 1:addContact(hashT);
+            break;
+            case 2:showList(hashT);
+            break;
+            case 3:cout<<"Enter name: ";
+            cin.ignore();
+            getline(cin, name);
+            temp=search(hashT, name);
+            if(temp)          
+                update(hashT, temp);
+            break;
+            case 4:cout<<"Enter Name: ";
+            cin.ignore();
+            getline(cin, name);
+            temp=search(hashT, name);
+            if(temp){
+                cout<<"Found"<<endl;
+                displayInfo(temp);   
+            }
+            break;
+            case 5:cout<<"Enter name: ";
+            cin.ignore();
+            getline(cin, name);
+            deleteContact(hashT, name);
+            break;
+            case 6:i=0;
+            break;
+            default:cout<<"Wrong input"<<endl;            
+        
+        }
+        
+    }
+    
+    
+    
+    
+    return 0;
+}
+
