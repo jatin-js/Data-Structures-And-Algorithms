@@ -4,33 +4,27 @@ int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    long long t, i, j, n;
+    long long t, i, j, n, a, b, sum1, sum2;
     cin >> t;
     while (t--)
     {
+        sum1 = sum2 = 0;
         cin >> n;
-        long long a[n], b[n];
+        // long long a[n], b[n];
         for (i = 0; i < n; i++)
         {
-            cin >> a[i];
+            // cin >> a[i];
+            cin >> a;
+            sum1 += a;
         }
         for (i = 0; i < n; i++)
         {
-            cin >> b[i];
+            // cin >> b[i];
+            cin >> a;
+            // sum2 += b;
+            sum1 -= a;
         }
-        for (i = 0; i < n - 1; i++)
-        {
-            if (a[i] > b[i])
-            {
-                a[i + 1] = a[i + 1] + a[i] - b[i];
-            }
-            else if (a[i] < b[i])
-            {
-                a[i + 1] = a[i + 1] - a[i] + b[i];
-            }
-            a[i] = b[i];
-        }
-        if (a[n - 1] == b[n - 1])
+        if (sum1 == 0)
             cout << "YES\n";
         else
             cout << "NO\n";
