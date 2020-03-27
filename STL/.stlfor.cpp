@@ -1,11 +1,4 @@
-// #include <bits/stdc++.h>
-#include <iostream>
-#include <vector>
-#include <list>
-#include <map>
-#include <queue>
-#include <set>
-
+#include <bits/stdc++.h>
 using namespace std;
 int main()
 {
@@ -19,7 +12,6 @@ int main()
         {
         }
 
-        list<int> l;
         list<int>::iterator it;
         for (it = l.start(); it != l.end(); it++)
         {
