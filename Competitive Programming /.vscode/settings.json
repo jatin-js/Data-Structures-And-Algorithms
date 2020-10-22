@@ -1,0 +1,20 @@
+{
+    "files.associations": {
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "iostream": "cpp",
+        "sstream": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "algorithm": "cpp",
+        "stack": "cpp",
+        "map": "cpp",
+        "deque": "cpp",
+        "utility": "cpp",
+        "queue": "cpp",
+        "ios": "cpp",
+        "iosfwd": "cpp",
+        "iterator": "cpp",
+        "functional": "cpp"
+    }
+}
